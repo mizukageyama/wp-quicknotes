@@ -1,16 +1,17 @@
 
-add_action( 'show_user_profile', 'nels_show_custom_profile', 10, 1  );
-add_action( 'edit_user_profile', 'nels_show_custom_profile', 10, 1  );
-add_action( 'user_new_form', 'nels_show_custom_profile', 10, 1  );
+* add_action( 'show_user_profile', 'nels_show_custom_profile', 10, 1  );
+* add_action( 'edit_user_profile', 'nels_show_custom_profile', 10, 1  );
+* add_action( 'user_new_form', 'nels_show_custom_profile', 10, 1  );
+``
 function nels_show_custom_profile($user) {
     // $user->ID;
     // $user->last_name
     echo the html input....
     $val = get_user_meta( $user->ID , 'meta_key', true ); //true = single val only
 }
-
-add_action( 'personal_options_update', 'nels_save_custom_profile' );
-add_action( 'edit_user_profile_update', 'nels_save_custom_profile' );
+``
+* add_action( 'personal_options_update', 'nels_save_custom_profile' );
+* add_action( 'edit_user_profile_update', 'nels_save_custom_profile' );
 
 //=new user : 
 add_action( 'user_register', 'nels_save_new_custom_profile' ); //fires after saving new user
